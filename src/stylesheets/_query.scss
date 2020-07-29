@@ -1,0 +1,30 @@
+
+
+@media screen and (max-width: 1050px){
+    .car {
+        padding: 1em!important;
+        width: 80%;
+    }
+    .imgs {
+        padding: 1em;
+        width: 100%;
+        margin: 0 auto;
+        &.ppp {
+            margin: 2em;
+        }
+    }
+    .mFoot2 {
+        padding-top: 200px;
+        padding-bottom: calc(450.5px - 225px);
+    }
+}
+@media screen and (min-width:1051px){
+    .mFoot2 {
+        padding-top: 225px;
+        padding-bottom: calc(474.5px - 225px);
+    }
+}
+.mFoot {
+    padding-top: 15px;
+    padding-bottom: calc(77.5px - 15px);
+}
