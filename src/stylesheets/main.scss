@@ -1,1 +1,162 @@
 // Your styles go here
+// b4 turn in specify inported bootstrap items
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,531;1,531&family=Sora:wght@477&display=swap');
+@import "query";
+$theme-colors: (
+  "color-darkBlue": #0d5f8a,
+  "color-yellow": #ffcc01,
+  "color-lightBlue": #6ec3c1,
+  "color-darkGreen": #335120,
+  "color-lightGreen": #90cc5f,
+  "black": black,
+  "alice": aliceblue,
+  "white": white
+);
+// need to create white space if page does not scale down to the bottom
+// with footer 
+$text: "h1", "h2","h3","h4","h5","p";
+:root html body {
+    font-size: 17.5;
+    color: theme-color("black");
+    background-color:theme-color("alice");
+}
+html body {
+    color: theme-color("black");
+
+}
+@each $textT in $text {
+    .#{$textT} {
+        z-index: 0;
+    }
+}
+$h-Adjustment: (25,100, 200, 300, 400, 500, 600, 800, 1200);
+@each $height-Adjustment in $h-Adjustment {
+    .h-#{$height-Adjustment} {
+        height: $height-Adjustment + px;
+    } 
+}
+.caro-stuff {
+    background-color: theme-color("color-lightGreen");
+    &.caro-headings {
+        background-color: theme-color("color-darkGreen");
+    }
+}
+
+.nav-background-gradiant {
+    background-image: linear-gradient(45deg,theme-color("white"),theme-color("white")50%,theme-color("color-darkBlue")50%,theme-color("color-darkBlue"));
+}
+
+//frame colors
+.main-color {
+    background-color: theme-color("color-darkBlue");
+    &.bgO {
+    background-color: rgba(theme-color("color-yellow"), $alpha: .5);  
+    }
+}
+.main-secondary-color {
+    background-color: theme-color("color-yellow");
+    &.hero1 {
+        background-image: url(/images/home-hero.gif);  
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        &.bgO:after {
+            position: absolute;
+            content: " ";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-blend-mode: multiply;
+            background: rgba(theme-color("alice"), $alpha: .4);
+        }
+        }
+    &.reg {
+        background-image: url(/images/home-hero.gif);  
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        color: theme-color("alice");
+        &.bgO:after {
+            position: absolute;
+            content: " ";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-blend-mode: multiply;
+            background: rgba(theme-color("color-yellow"), $alpha: .69);
+            
+        }
+        }
+    }   
+.portal-bg {
+    background-color: rgba(theme-color("color-darkBlue"), $alpha: .4);
+    background-blend-mode: multiply;
+}
+.no-container {
+    display: none;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
+    height: $card-height;
+    word-wrap: break-word;
+    background-color: $card-bg;
+    background-clip: border-box;
+    border: none;
+    @include border-radius(none);  
+  
+    > hr {
+      margin-right: 0;
+      margin-left: 0;
+    }
+}
+body {
+    animation: eas 200ms;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color:theme-color("color-darkBlue");
+}
+
+.myBorder-left {
+    border-left: 1px solid rgba(theme-color("black"), $alpha: .1);
+}
+.myBorder-nav {
+    border-top: 1px solid rgba(theme-color("color-yellow"), $alpha: .5);
+}
+
+h1, h3 {
+    font-family: 'Sora', sans-serif;
+}
+h4, p {
+    font-family: 'Raleway', sans-serif;
+    &.italic {
+        font-style: italic;
+    }
+}
+#font-special {
+    color: crimson;
+    font-size: .8em;
+    font-style: italic;
+}
+
+@keyframes eas {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
