@@ -6,7 +6,5 @@ require.context('../stylesheets/', true, /\.(css|scss)$/i)
 //TODO 
 import 'bootstrap';
 import './header-footer.js';
-import './clubs.js';
-import './staff.js';
 
  
