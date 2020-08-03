@@ -1,9 +1,8 @@
 
 
-let jj = document.getElementById('js_header').outerHTML = 
-`<nav class="navbar navbar-expand-lg navbar-light color-darkBlue nav-background-gradiant">
-
-<img src="/images/evercharter.svg"  height="30" class="d-inline-block align-top pr-2" style="margin-left: -1em;" alt="">
+document.getElementById('js_header').outerHTML = 
+`<nav class="navbar navbar-expand-lg navbar-light color-darkBlue nav-background-gradiant ">
+<a href="/"><img src="/images/evercharter.svg" type="button" href="index.html"  height="30" class="d-inline-block align-top pr-2" style="margin-left: -1em;" alt=""></a>
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -35,15 +34,34 @@ let jj = document.getElementById('js_header').outerHTML =
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
     </form>
 </div> 
-</nav>
+
+</nav >
 <body>`
 
 
-let j = document.getElementById('js_footer').outerHTML =
+document.getElementById('js_footer').outerHTML =
 `<div class="jumbotron jumbotron-fluid main-color mb-0">
 <div class="container">
-  <h1 class="display-5">footer</h1>
-  <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis soluta quas incidunt? 
-    Dolores nostrum autem ad ipsum exercitationem earum, recusandae asperiores porro delectus, mollitia veritatis
-    quam unde explicabo cumque tenetur!</p>`
+    <div class="row">
+      <div class="col-md-4  mb-2">
+          <div class="text-center"><button class="btn main-color bgO-hover text-white  border border-2 border-white p-2 mb-2 col-6">Facebook</button></div>
+          <div class="text-center"><button class="btn main-color bgO-hover text-white  border border-2 border-white p-2 mb-2 col-6">Twitter</button></div>
+          <div class="text-center"><button class="btn main-color bgO-hover text-white  border border-2 border-white p-2 col-6">Blog</button></div>
+      </div>
+      <div class="col-md-4 mb-2 px-0  pt-2  pb-2 border border-white border-2 w-50 mx-auto">
+      <div class="text-center">Address</div>
+      <div class="text-center">1111 s School ln</div>
+      <div class="text-center">Ogden, Ut 84401</div>
+      <div class="text-center mt-3">everchart@gmail.com</div>
+      </div>
+      <div class="col-md-4">
+          <div class="text-center" style="text-decoration: underline;">Office Phone</div>
+          <div class="text-center">Phone: 555-555-555</div>
+          <div class="text-center" style="text-decoration: underline;">Nurse</div>
+          <div class="text-center">Phone: 535-551-6666</div>
+          <div class="text-center" style="text-decoration: underline;">Sheriff</div>
+          <div class="text-center">Phone: 555-5556-2221</div>
+      </div>
+    </div>  
+</div>`
     

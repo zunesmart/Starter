@@ -17,14 +17,18 @@
         padding-top: 200px;
         padding-bottom: calc(450.5px - 225px);
     }
+    
+.card-texts {
+    font-size: 1.5vh; 
+}
 }
 @media screen and (min-width:1051px){
     .mFoot2 {
         padding-top: 225px;
-        padding-bottom: calc(474.5px - 225px);
+        padding-bottom: calc(486.5px - 225px);
     }
 }
 .mFoot {
     padding-top: 15px;
-    padding-bottom: calc(77.5px - 15px);
+    padding-bottom: calc(88.5px - 15px);
 }

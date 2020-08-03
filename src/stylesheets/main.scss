@@ -1,5 +1,4 @@
-// Your styles go here
-// b4 turn in specify inported bootstrap items
+
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,531;1,531&family=Sora:wght@477&display=swap');
 @import "query";
@@ -13,18 +12,9 @@ $theme-colors: (
   "alice": aliceblue,
   "white": white
 );
-// need to create white space if page does not scale down to the bottom
-// with footer 
-$text: "h1", "h2","h3","h4","h5","p";
-:root html body {
-    font-size: 17.5;
-    color: theme-color("black");
-    background-color:theme-color("alice");
-}
-html body {
-    color: theme-color("black");
 
-}
+$text: "h1", "h2","h3","h4","h5","p";
+
 @each $textT in $text {
     .#{$textT} {
         z-index: 0;
@@ -36,6 +26,28 @@ $h-Adjustment: (25,100, 200, 300, 400, 500, 600, 800, 1200);
         height: $height-Adjustment + px;
     } 
 }
+/* width */
+::-webkit-scrollbar {
+    width: .5em;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    
+    background: rgba(theme-color("color-darkBlue"), $alpha: .69); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(theme-color("color-darkBlue"), $alpha: .95);
+  }
 .caro-stuff {
     background-color: theme-color("color-lightGreen");
     &.caro-headings {
@@ -50,8 +62,17 @@ $h-Adjustment: (25,100, 200, 300, 400, 500, 600, 800, 1200);
 //frame colors
 .main-color {
     background-color: theme-color("color-darkBlue");
+    color: theme-color("alice");
     &.bgO {
     background-color: rgba(theme-color("color-yellow"), $alpha: .5);  
+    }
+    &.bgO-hover:hover {
+    background-color: rgba(theme-color("color-darkBlue"), $alpha: .85); 
+    color: rgba(theme-color("white"), $alpha: 1);
+    }
+    &.bg-after:after {
+    background-color: rgba(theme-color("color-darkBlue"), $alpha: .85); 
+    color: rgba(theme-color("black"), $alpha: 1);
     }
 }
 .main-secondary-color {
@@ -73,6 +94,7 @@ $h-Adjustment: (25,100, 200, 300, 400, 500, 600, 800, 1200);
             z-index: -1;
             background-blend-mode: multiply;
             background: rgba(theme-color("alice"), $alpha: .4);
+            
         }
         }
     &.reg {
@@ -96,7 +118,54 @@ $h-Adjustment: (25,100, 200, 300, 400, 500, 600, 800, 1200);
             
         }
         }
-    }   
+    }
+    .card-color {
+        color:theme-color("color-yellow");
+        &.bgO-1:hover {
+            color: aliceblue;
+            background: rgba(theme-color("alice"), $alpha: .5);
+            &.banHov:hover {
+                background-color: rgba(theme-color("black"), $alpha: .5);
+                box-shadow: 0px 0px 3px 3px rgba(theme-color("alice"), $alpha: .4);
+                &.ali{
+                    cursor: alias;
+                }
+            &.banner{
+                color:theme-color("black");
+                &:hover {
+                    background-color: rgba(theme-color("color-yellow"), $alpha: .5);
+                    box-shadow: 0px 0px 3px 3px rgba(theme-color("alice"), $alpha: .4);
+                }
+            }
+            
+        }
+    } 
+    }
+    .card-color1 {
+        color:theme-color("color-darkBlue");
+        background-color: rgba(theme-color("alice"), $alpha: .5);
+        font-size: 24px;
+            &.banner{
+                color:theme-color("black");
+                &:hover {
+                    background-color: rgba(theme-color("color-yellow"), $alpha: .85);
+                    color: rgba(theme-color("alice"), $alpha: 1);
+                    box-shadow: 0px 0px 3px 3px rgba(theme-color("alice"), $alpha: .4);
+                    font-size: 48px;
+                    text-align: center;
+                    animation: eas 1s;
+                  
+                
+            }
+            
+        }
+    }
+    
+.club-activites-hero {
+        background-color: rgba(theme-color("color-darkGreen"),$alpha: .75);
+        color: rgba(theme-color("black"), $alpha: 1);
+
+}  
 .portal-bg {
     background-color: rgba(theme-color("color-darkBlue"), $alpha: .4);
     background-blend-mode: multiply;
@@ -104,18 +173,41 @@ $h-Adjustment: (25,100, 200, 300, 400, 500, 600, 800, 1200);
 .no-container {
     display: none;
 }
+.overflow-hidden-2 {
+    scrollbar-color: theme-color("black");
+}
+.faculty-bg {
+    background-color: rgba(theme-color("color-darkBlue"), $alpha: .69);
+    animation: eas 2s;
+    &.bgO-hover2 {
+        &:hover {background-color: rgba(theme-color("color-yellow"), $alpha: .85);
+            background-blend-mode: multiply; 
+        color: rgba(theme-color("white"), $alpha: 1);
+        }
+
+}
+} 
+.faculty-nav-bg {
+    background: rgba(theme-color("color-darkBlue"), $alpha: 1); 
+}
+.faculty-frame {
+    height: 500px;
+    border: 2px solid rgba(theme-color("color-darkBlue"), $alpha: .3);
+}
 .card {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
+    min-width: 0; 
     height: $card-height;
     word-wrap: break-word;
     background-color: $card-bg;
     background-clip: border-box;
     border: none;
-    @include border-radius(none);  
-  
+    border-radius: none;
+    &.main-color {
+        background-color: transparent;
+    }
     > hr {
       margin-right: 0;
       margin-left: 0;
@@ -133,7 +225,7 @@ body {
     border-left: 1px solid rgba(theme-color("black"), $alpha: .1);
 }
 .myBorder-nav {
-    border-top: 1px solid rgba(theme-color("color-yellow"), $alpha: .5);
+    border-top: 2px solid rgba(theme-color("color-yellow"), $alpha: .5);
 }
 
 h1, h3 {
@@ -150,6 +242,15 @@ h4, p {
     font-size: .8em;
     font-style: italic;
 }
+#font-special2 {
+    font-size: small;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.anwserR {
+    animation: anwserR 17s;
+}
 
 @keyframes eas {
     from {
@@ -160,3 +261,14 @@ h4, p {
     }
 }
 
+@keyframes anwserR {
+    0% {
+        opacity: 0;
+    }
+    98% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -9,35 +9,541 @@
 </head>
 <header id="js_header"></header>
 <body>
+  
   <div class="container">
-  <div class="card text-center">
-    <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
+  <div class="card text-center mt-4 mb-2">
+    <div class="card-header faculty-nav-bg">
+      <ul class="nav nav-tabs card-header-tabs">  
         <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
+          <a class="nav-link active" href="#">Faculty and Staff</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <li class="nav-item text-white">
+          <a class="nav-link" type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop10000">School Policy</a>
         </li>
       </ul>
     </div> 
-    <div class="container-fluid">
-      <div class="row row-cols-1 row-cols-md-2">
+    <div class="container-fluid py-0 ">
+      <div class="row row-cols-1 row-cols-lg-2 overflow-auto py-4 faculty-bg justify-content-around faculty-frame">
         <span id="elly" class="no-container"/>
-      </div> 
+      </div>  
     </div>
   </div>
   </div>
-  
+  <hr>
+  <div class="container">
+    <h3 class="main-color p-3 m-0">Site Jeapardy!</h3>
+    <div class="card-group pb-5 py-2 px-3 main-color" >
+    <div class="card main-color">
+    <span id="jeapardy-components" class="no-container"/>
+    </div>
+    <div class="card main-color">
+      <span id="jeapardy-components1" class="no-container"/>
+    </div>
+    <div class="card main-color">
+      <span id="jeapardy-components2" class="no-container"/>
+    </div>
+    <div class="card main-color"> 
+      <span id="jeapardy-components3" class="no-container"/>
+      </div>
+    </div> 
+  </div>
+<!-- Modal -->
+<div>
+  <span id="mod" class="no-container"></span>
+</div>
+<div>
+  <span id="mod1" class="no-container"></span>
+</div>
+<div>
+  <span id="mod2" class="no-container"></span>
+</div>
+<div>
+  <span id="mod3" class="no-container"></span>
+</div>
+ 
+<div class="modal fade" id="staticBackdrop10000" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">School Policy Version 1.1</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <li>Dress - Students must use School uniform uneless instructed by faculty.</li>
+          <li>Conduct - Students and Parents must be respectful to faculty and staff and vice versa
+            If you see a problem that needs to be resoved please contact the principal before going to 
+            the board.
+          </li>
+          <li>Time - Students and Parents must work together to get their students to school before the bell rings</li>
+          <li>Grade and Success - students must recive a C or higher in any given subject. If students cant achive this
+            they may be put with our resource instuctor. If students still cant succeed here, we will make arrangements to
+            best fill their needs so they can be successful in the future.
+          </li>
+          <li>Food and Drink - students are alowed to use school vending and bring their own Items of food. Food and drink canot be 
+            distracting and can be taken away if problems happen
+          </li>
+          <li>Rules - These rules are made up by the site admin. Therefore there are no rules here. Fair Game!</li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">I understand and will obey</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
 </body>
 <footer id="js_footer"></div>
 </div> 
 </footer>
 <script>
-  let titleAbout = 'About'
+
+const gameObjects = {
+   name: 'Home Page',
+   name1: 'JS/Sass',
+   name2: 'Teachers',
+   name3: 'Other Pages', 
+   firstCol: [
+      oneHundred = { 
+      cash: 100,
+      code: 1,
+          q: 'How can you define something in JS.',
+          a: 'Use let and var followed by name and value',
+          b: 'Put something in []',
+          c: 'Put something in {}',
+          d: 'They are all wrong.',
+          truesy: 'A is correct'
+},
+    twoHundred = { 
+          cash: 250,
+          code: 2,
+              q: 'Whats statement is Closest to Sass and Variables',
+              a: 'Its not possible to have the two together! Witch Craft!',
+              b: 'Very good for storing colors and CSS/Sass Values',
+              c: 'It will repace JS',
+              d: 'This question is confusing',
+              truesy: 'B is correct'
+            },
+    
+    fiveHundred = { 
+      cash: 500,
+      code: 3,
+          q: 'What is an easy way to write a for loop in JS',
+          a: 'for(everything that will work --- done)',
+          b: 'for(let peaches of trees){console.log(peaches)}',
+          c: 'let arr => ()',
+          d: 'its never easy to right a for loop in JS',
+          truesy: 'A is correct'
+  },
+    sevenHundred = { 
+      cash: 750,
+      code: 4,
+          q: 'What is the structure of a Map in Sass. Write an example.',
+          a: 'Map --> all colors orange',
+          b: '$font-weights: ("regular": 400, "medium": 500, "bold": 700);',
+          c: '$map = 1,4,4,9',
+          d: 'They are all wrong',
+          truesy: 'B is correct'
+        },
+oneThousandHundered = { 
+      cash: 1000,
+      code: 5,
+          q: 'A boss ask you to create a form so customers can input their information. What will help you make this easier?',
+          a: 'A raise!',
+          b: 'Tell you boss it is not needed and it is called paper and ink!',
+          c: 'McDonals',
+          d: 'A database. Nested;objects, arrays, and functions. A basic styled form frame.',
+          truesy: 'D is Correct'
+        }
+].reverse(),
+
+secondCol: [
+      oneHundred = { 
+      cash: 100,
+      code: 6,
+          q: 'Where is the other link besides for `Home` on menu bar?',
+          a: 'Logo Image',
+          b: 'Submenu',
+          c: 'Search box',
+          d: 'There is not another link for home! false!',
+          truesy: 'A is correct'
+},
+    twoHundred = { 
+          cash: 250,
+          code: 7,
+              q: 'When is the deadline for Registration for current students?',
+              a: 'Aug. 8',
+              b: 'Aug. 20',
+              c: 'Aug. 1',
+              d: 'Aug. 15',
+              truesy: 'C is Correct'
+            },
+    
+    fiveHundred = { 
+      cash: 500,
+      code: 8,
+          q: 'Principals Corner: Why havent we seen Principal Fred',
+          a: 'He had a baby',
+          b: 'His wife had a baby and he was busy',
+          c: 'He went to France',
+          d: 'no one knows',
+          truesy: 'B is Correct' 
+  },
+    sevenHundred = { 
+      cash: 750,
+      code: 9,
+          q: 'What grade level can volunteer now?',
+          a: '1st Grade',
+          b: '2nd Grade',
+          c: '6th Grade',
+          d: '5th Grade',
+          truesy: 'D is correct, this is only for in class volunteer service. Any other activity all students may participate.'
+        },
+oneThousandHundered = { 
+      cash: 1000,
+      code: 10,
+          q: 'Who has been nominated for student of the year?',
+          a: 'We are actually going to do a teacher of the year instead!',
+          b: 'Veva',
+          c: 'Holly',
+          d: 'Chad',
+          truesy: 'D is correct'
+        }
+].reverse(),
+thirdCol: [
+      oneHundred = { 
+      cash: 100,
+      code: 11,
+          q: 'Were can you find more about the faculty?',
+          a: 'Under the submenu/faculty',
+          b: 'Home page',
+          c: 'Portal Page',
+          d: 'Teachers are not alowed to talk about themselves',
+          truesy: 'A is correct'
+},
+    twoHundred = { 
+          cash: 250,
+          code: 12,
+              q: 'Were do you go to find more about clubs?',
+              a: 'Submenu',
+              b: 'Under clubs in the nav menu',
+              c: 'Inside of the prinipal`s office',
+              d: 'To club chair or teacher',
+              truesy: 'B or D are correct'
+            },
+    
+    fiveHundred = { 
+      cash: 500,
+      code: 13,
+          q: 'Portal: Parents can us parent pin to sign in.',
+          a: 'True',
+          b: 'False',
+          c: 'Null',
+          d: 'Unknown',
+          truesy: 'A is Correct. Parents are encoraged to sign in with pin especially if they need to contact a teacher that way.' 
+  },
+    sevenHundred = { 
+      cash: 750,
+      code: 14,
+          q: 'Whats on the contact page?',
+          a: 'Social media feed, form, and school phone.',
+          b: 'All the teachers email.',
+          c: 'the page does exist yet',
+          d: 'A phone directory',
+          truesy: 'C is Corect'
+        },
+oneThousandHundered = { 
+      cash: 1000,
+      code: 15,
+          q: 'Why Charter: Is the video on the page why charter a good video to use?',
+          a: 'Yes, Presidents support charter schools',
+          b: 'No, Its a joke! Completely !Inappropriate for a school website.',
+          c: 'Yes, I like this guy',
+          d: 'Yes, their should be more videos like this on both public, charter, and other private K-12 websites',
+          truesy: 'B is Correct. This would not be appropriate.'
+        }
+].reverse(),
+fourthCol: [
+      oneHundred = { 
+      cash: 100,
+      code: 16,
+          q: 'Who is under the task force?',
+          a: 'Principal Fred',
+          b: 'Bo',
+          c: 'PJ',
+          d: 'Skadi',
+          truesy: 'C is Correct'
+},
+    twoHundred = { 
+          cash: 250,
+          code: 17,
+              q: 'Who helps Jason with teaching kids digital media?',
+              a: 'Adam',
+              b: 'Sara',
+              c: 'Amie',
+              d: 'Bill Gates',
+              truesy: 'B is correct!'
+            },
+    
+    fiveHundred = { 
+      cash: 500,
+      code: 18,
+          q: "Who has 2 dogs?",
+          a: 'Bo',
+          b: 'Wanita',
+          c: 'Skadi',
+          d: 'Jason',
+          truesy: 'C is correct' 
+  },
+    sevenHundred = { 
+      cash: 750,
+      code: 19,
+          q: 'Who is both a Janitor and helps out with the play?',
+          a: 'Jake',
+          b: 'Bellona',
+          c: 'Amie',
+          d: 'Adam',
+          truesy: 'D is correct'
+        },
+oneThousandHundered = { 
+      cash: 1000,
+      code: 20,
+          q: 'Double Double! Who site admin and digital media teacher and were else is their name listed on the website besides the teachers list?',
+          a: '!not permited',
+          b: '!not permited',
+          c: '!not permited',
+          d: '!not permited',
+          truesy: 'Jason Ure is the correct anwser and he is labled on the clubs page under Computer programming.'
+        }
+].reverse() 
+}
+
+function timersey(){
+    for(let someNum of gameObjects.firstCol){ 
+  let timeleft = 15;
+  let downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    
+  }
+  document.querySelector(`#progressBar-${someNum.code.toString()}`).value = 15 - timeleft;
+  timeleft -= 1;
+}, 1000);}
+timeleft = 0
+}
+function timersey1(){
+    for(let someNum1 of gameObjects.secondCol){ 
+  let timeleft = 15;
+  let downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    
+  }
+  document.querySelector(`#progressBar-${someNum1.code.toString()}`).value = 15 - timeleft;
+  timeleft -= 1;
+}, 1000);}
+timeleft = 0
+}
+function timersey2(){
+    for(let someNum2 of gameObjects.thirdCol){ 
+  let timeleft = 15;
+  let downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    
+  }
+  document.querySelector(`#progressBar-${someNum2.code.toString()}`).value = 15 - timeleft;
+  timeleft -= 1;
+}, 1000);}
+timeleft = 0
+}
+function timersey3(){
+    for(let someNum3 of gameObjects.fourthCol){ 
+  let timeleft = 15;
+  let downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    
+  }
+  document.querySelector(`#progressBar-${someNum3.code.toString()}`).value = 15 - timeleft;
+  timeleft -= 1;
+}, 1000);}
+timeleft = 0
+}
+
+for(let objs of gameObjects.firstCol){
+document.getElementById('jeapardy-components').outerHTML +=
+`<div class="card m-1 h-300 faculty-bg bgO-hover2" type="button" onClick="timersey()" data-toggle="modal" data-target="#staticBackdrop-${objs.code.toString()}">
+  <div class="card-header faculty-bg ">${gameObjects.name1}</div>
+  <div class="card-body text-white faculty-bg">
+    <h5 class="card-title ">${gameObjects.name1}</h5>
+    <p class="card-text">${objs.cash.toString()}</p>
+  </div>
+  <div class="card-footer faculty-bg">You will have 15 seconds to anwser! Be ready!</div>
+</div>`
+
+
+  document.getElementById("mod").outerHTML += 
+  `<div class="modal fade" id="staticBackdrop-${objs.code.toString()}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+  <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">${gameObjects.name1}</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+      <h5>Q: ${objs.q}</h5>
+      <ul style="list-style-type: none;">
+        
+        <li>A: ${objs.a}</li>
+        <li>B: ${objs.b}</li>
+        <li>C: ${objs.c}</li>
+        <li>D: ${objs.d}</li>
+      </div>
+      
+      <div class="modal-footer">
+        <div class="text-center"><progress value="0" max="15"  id="progressBar-${objs.code.toString()}"></progress></div>
+        <span class="anwserR">${objs.truesy}</span>
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div></div></div>`
+  }
+
+
+for(let objs1 of gameObjects.secondCol){
+
+  document.getElementById('jeapardy-components1').outerHTML +=
+`<div class="card faculty-bg m-1 h-300 faculty-bg bgO-hover2"  type="button" onClick="timersey1()" data-toggle="modal" data-target="#staticBackdrop-${objs1.code.toString()}">
+  <div class="card-header faculty-bg">${gameObjects.name}</div>
+  <div class="card-body faculty-bg text-white">
+    <h5 class="card-title">${gameObjects.name}</h5>
+    <p class="card-text">${objs1.cash.toString()}</p>
+  </div>
+  <div class="card-footer faculty-bg">You will have 15 seconds to anwser! Be ready!</div>
+</div>`
+
+document.getElementById("mod1").outerHTML += 
+  `<div class="modal fade" id="staticBackdrop-${objs1.code.toString()}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+  <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">${gameObjects.name}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+      <h5>Q: ${objs1.q}</h5>
+      <ul style="list-style-type: none;">
+        
+        <li>A: ${objs1.a}</li>
+        <li>B: ${objs1.b}</li>
+        <li>C: ${objs1.c}</li>
+        <li>D: ${objs1.d}</li>
+      </div>
+      <div class="modal-footer">
+        <div class="text-center"><progress value="0" max="15"  id="progressBar-${objs1.code.toString()}"></progress></div>
+        <span class="anwserR">${objs1.truesy}</span>
+        <button type="button"  class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div></div></div>`
+  }
+
+for(let objs2 of gameObjects.thirdCol){
+
+  document.getElementById('jeapardy-components2').outerHTML +=
+`<div class="card faculty-bg m-1 h-300 faculty-bg bgO-hover2"  type="button" onClick="timersey2()" data-toggle="modal" data-target="#staticBackdrop-${objs2.code.toString()}">
+  <div class="card-header faculty-bg">${gameObjects.name3}</div>
+  <div class="card-body faculty-bg text-white">
+    <h5 class="card-title">${gameObjects.name3}</h5>
+    <p class="card-text">${objs2.cash.toString()}</p>
+  </div>
+  <div class="card-footer faculty-bg">You will have 15 seconds to anwser! Be ready!</div>
+</div>`
+
+document.getElementById("mod2").outerHTML += 
+  `<div class="modal fade" id="staticBackdrop-${objs2.code.toString()}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+  <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">${gameObjects.name3}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+      <h5>Q: ${objs2.q}</h5>
+      <ul style="list-style-type: none;">
+        
+        <li>A: ${objs2.a}</li>
+        <li>B: ${objs2.b}</li>
+        <li>C: ${objs2.c}</li>
+        <li>D: ${objs2.d}</li>
+      </div>
+      <div class="modal-footer">
+        <div class="text-center"><progress value="0" max="15"  id="progressBar-${objs2.code.toString()}"></progress></div>
+        <span class="anwserR">${objs2.truesy}</span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div></div></div>`
+
+}
+
+for(let objs3 of gameObjects.fourthCol){
+
+document.getElementById('jeapardy-components3').outerHTML +=
+`<div class="card faculty-bg m-1 h-300 faculty-bg bgO-hover2"  type="button" onClick="timersey3()" data-toggle="modal" data-target="#staticBackdrop-${objs3.code.toString()}">
+<div class="card-header faculty-bg">${gameObjects.name2}</div>
+<div class="card-body faculty-bg text-white" >
+  <h5 class="card-title">${gameObjects.name2}</h5>
+  <p class="card-text">${objs3.cash.toString()}</p>
+</div>
+<div class="card-footer faculty-bg">You will have 15 seconds to anwser! Be ready!</div>
+</div>`
+
+document.getElementById("mod3").outerHTML += 
+`<div class="modal fade" id="staticBackdrop-${objs3.code.toString()}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">${gameObjects.name2}</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <h5>Q: ${objs3.q}</h5>
+    <ul style="list-style-type: none;">
+      
+      <li>A: ${objs3.a}</li>
+      <li>B: ${objs3.b}</li>
+      <li>C: ${objs3.c}</li>
+      <li>D: ${objs3.d}</li>
+    </div>
+    <div class="modal-footer">
+      <div class="text-center"><progress value="0" max="15"  id="progressBar-${objs3.code.toString()}"></progress></div>
+        <span class="anwserR">${objs3.truesy}</span>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      
+    </div>
+  </div></div></div>`
+
+}
+</script>
+<script>
+let titleAbout = 'About'
 let adam = {
     number: '1',
     name: 'Adam Turner',
@@ -99,10 +605,10 @@ let skadi = {
 }
 let bo = {
     number: '9',
-    name: 'Amie Jorgensen',
+    name: 'Bo He',
     title: titleAbout,
-    text: 'I love teaching my first graders to read. I have 2 dogs and a 1 year old!',
-    gradeTitle: 'Teacher Aid/Reading and Fitness Club'
+    text: 'I dont care whos says what, but math and science are the greatest subjects in the world',
+    gradeTitle: 'Teacher Fill/Aid - Greatest Students in the world'
 }
 let wanita = {
     number: '10',
@@ -113,25 +619,33 @@ let wanita = {
     gradeTitle: 'Third Grade/Play Cordinator'
 }
 let fred = {
-    number: '1',
+    number: '11',
     name: 'Fred Talk',
     title: titleAbout,
     text: 'I like my job! It is so much fun just being one of the kids!'+
     'I also love directing the school musical!',
     gradeTitle: 'Principal/Head Honcho'
 }
-
-let staffs = [adam,jason,amie,jake,sarah,bill,bellona,skadi,bo,wanita,fred]
+let pj = {
+    number: '12',
+    name: 'PJ Mack',
+    title: titleAbout,
+    text: `Safty will always be my number one priority for students.`,
+    gradeTitle: 'Dare Officer/Task Force'
+}
+let staffs = [adam,jason,amie,jake,sarah,bill,bellona,skadi,bo,wanita,fred,pj]
    
 for(let stay of staffs) {
     document.getElementById('elly').outerHTML += `  
-    <div class="col mb-4">
-    <div class="card">
-    
-      <div class="card-body">
-        <h5 class="card-title">${stay.name}</h5>
-        <p class="card-text"></p> 
+    <div class="row mb-2">
+    <div class="col-5 pl-2 pr-2"><img src="../images/faculty-${stay.number}.jpg" class="card-img" alt="...">
       </div>
+    <div class="card col-7 text-left">
+      <div class="card-body pt-0">
+        <h5 class="card-title">${stay.name} : ${stay.title} - <span id="font-special2">${stay.gradeTitle}</span></h5>
+        
+        <p class="card-text">${stay.text}</p> 
+      </div> 
     </div>
     </div>`
 }
