@@ -4,8 +4,8 @@ document.getElementById('js_header').outerHTML =
 `<nav class="navbar navbar-expand-lg navbar-light color-darkBlue nav-background-gradiant ">
 <a href="/"><img src="/images/evercharter.svg" type="button" href="index.html"  height="30" class="d-inline-block align-top pr-2" style="margin-left: -1em;" alt=""></a>
 
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
+<button class="navbar-toggler border border-white text-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon text-white"></span>
 </button>
 <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
   <ul class="navbar-nav">
@@ -48,7 +48,7 @@ document.getElementById('js_footer').outerHTML =
           <div class="text-center"><button class="btn main-color bgO-hover text-white  border border-2 border-white p-2 mb-2 col-6">Twitter</button></div>
           <div class="text-center"><button class="btn main-color bgO-hover text-white  border border-2 border-white p-2 col-6">Blog</button></div>
       </div>
-      <div class="col-md-4 mb-2 px-0  pt-2  pb-2 border border-white border-2 w-50 mx-auto">
+      <div class="col-md-4 mb-2 px-0  pt-2  pb-2 border border-white border-2 mx-auto" style="width:47%">
       <div class="text-center">Address</div>
       <div class="text-center">1111 s School ln</div>
       <div class="text-center">Ogden, Ut 84401</div>

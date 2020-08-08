@@ -1,0 +1,25 @@
+
+$theme-colors: (
+  "color-darkBlue": #0d5f8a,
+  "color-yellow": #ffcc01,
+  "color-lightBlue": #6ec3c1,
+  "color-darkGreen": #335120,
+  "color-lightGreen": #90cc5f,
+  "black": black,
+  "alice": aliceblue,
+  "white": white
+);
+
+$text: "h1", "h2","h3","h4","h5","p";
+
+@each $textT in $text {
+    .#{$textT} {
+        z-index: 0;
+    }
+}
+$h-Adjustment: (25,100, 200, 300, 400, 500, 600, 800, 1200);
+@each $height-Adjustment in $h-Adjustment {
+    .h-#{$height-Adjustment} {
+        height: $height-Adjustment + px;
+    } 
+}

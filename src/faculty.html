@@ -323,18 +323,23 @@ oneThousandHundered = {
 ].reverse() 
 }
 
-function timersey(){
+ function timersey(){
+
     for(let someNum of gameObjects.firstCol){ 
+
   let timeleft = 15;
   let downloadTimer = setInterval(function(){
     if(timeleft <= 0){
     clearInterval(downloadTimer);
-    
   }
   document.querySelector(`#progressBar-${someNum.code.toString()}`).value = 15 - timeleft;
   timeleft -= 1;
-}, 1000);}
+}, 1000); }
 timeleft = 0
+
+document.querySelector(`#progressBar-${someNum.code.toString()}`).value = 15; 
+document.getElementsByClassName("anwserR").style.dispay = "block";
+
 }
 function timersey1(){
     for(let someNum1 of gameObjects.secondCol){ 
@@ -396,7 +401,7 @@ document.getElementById('jeapardy-components').outerHTML +=
         <h5 class="modal-title" id="staticBackdropLabel">${gameObjects.name1}</h5>
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span class="anwserR" aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
@@ -413,7 +418,7 @@ document.getElementById('jeapardy-components').outerHTML +=
         <div class="text-center"><progress value="0" max="15"  id="progressBar-${objs.code.toString()}"></progress></div>
         <span class="anwserR">${objs.truesy}</span>
         
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" onClick="work()" class="btn btn-secondary anwserR" data-dismiss="modal">Close</button>
         
       </div>
     </div></div></div>`

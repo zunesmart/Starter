@@ -1,17 +1,9 @@
 
+@import "customVar";
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,531;1,531&family=Sora:wght@477&display=swap');
 @import "query";
-$theme-colors: (
-  "color-darkBlue": #0d5f8a,
-  "color-yellow": #ffcc01,
-  "color-lightBlue": #6ec3c1,
-  "color-darkGreen": #335120,
-  "color-lightGreen": #90cc5f,
-  "black": black,
-  "alice": aliceblue,
-  "white": white
-);
+
 
 $text: "h1", "h2","h3","h4","h5","p";
 
@@ -250,6 +242,7 @@ h4, p {
 
 .anwserR {
     animation: anwserR 17s;
+
 }
 
 @keyframes eas {
